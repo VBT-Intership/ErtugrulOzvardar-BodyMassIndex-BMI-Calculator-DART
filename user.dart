@@ -38,15 +38,15 @@ class User {
   print("Welcome to BMI Calculator! ");
   print("Please enter your credentials to calculate your BMI");
 
-  print("Name:");
+  print("Please enter your name:");
   String name = stdin.readLineSync();
-  print("Surname:");
+  print("Please enter your surname:");
   String surname = stdin.readLineSync();
-  print("Age:");
+  print("Please enter your age:");
   int age = int.parse(stdin.readLineSync());
-  print("Height:");
+  print("Please enter your height:  (exampleFormat = 1.85)");
   double height = double.parse(stdin.readLineSync());
-  print("Weight:");
+  print("Please enter your weight:  (exampleFormat = 85.5)");
   double weight = double.parse(stdin.readLineSync());
 
   User user = new User();
@@ -74,14 +74,14 @@ void main(){
     print("Your Body-mass-index (BMI) is: $bmi");
     print(comparator.compare(bmi));
   }
-  print("***  Now please type 'info' to see more information about the ideal body mass index according to the age range:  ***");
+  print("***  Now please type 'info' to see more information about the ideal body mass index according to your age:  ***");
   String info = stdin.readLineSync();
   if(info != "info"){
     throw{ArgumentError.value(info)};
   }else{
     var info = info_age.compare_age_by_range(newUser.age);
     print(info);
+    print("Have a healthy day! :) ");
   }
-
 
 }
