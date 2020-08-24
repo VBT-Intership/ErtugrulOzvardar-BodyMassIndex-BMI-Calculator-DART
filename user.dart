@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'bmiCalculator.dart';
 import 'bmiComparator.dart';
+import 'info_age.dart';
 
 class User {
   String name, surname;
@@ -63,13 +64,24 @@ void main(){
   var newUser = createUser();
   BmiCalculator calculator = new BmiCalculator();
   BmiComparator comparator = new BmiComparator();
+  Information_by_age info_age = new Information_by_age();
   print("Type 'C' to Calculate your Body-mass-index: ");
   String userInput = stdin.readLineSync();
   if(userInput != "C"){
       throw{ArgumentError.value(userInput)};
   }else{
     var bmi = calculator.calculateBmi(newUser.height, newUser.weight);
+    print("Your Body-mass-index (BMI) is: $bmi");
     print(comparator.compare(bmi));
   }
+  print("***  Now please type 'info' to see more information about the ideal body mass index according to the age range:  ***");
+  String info = stdin.readLineSync();
+  if(info != "info"){
+    throw{ArgumentError.value(info)};
+  }else{
+    var info = info_age.compare_age_by_range(newUser.age);
+    print(info);
+  }
+
 
 }

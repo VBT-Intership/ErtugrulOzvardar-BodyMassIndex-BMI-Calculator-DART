@@ -11,7 +11,7 @@ class BmiCalculator  {
   double get getWeight => weight;
   set setWeight(double weight) => this.weight = weight;
 
-  bmiCalculator(){
+  BmiCalculator(){
     this.height = height;
     this.weight = weight;
   }

@@ -1,9 +1,13 @@
 
 class BmiComparator{
   double bmi;
-  BmiComparator(){this.bmi = bmi;}
+
+  BmiComparator(){
+    this.bmi = bmi;
+    }
 
   compare(bmi){
+
     if(0.0 < bmi && bmi < 18.4) {
       print("Your body type is 'Thin'. In case of encountering this value, which indicates that the weight of the person is insufficient compared to her height, it is recommended that the person gain weight in a healthy way with a dietician");
     }
