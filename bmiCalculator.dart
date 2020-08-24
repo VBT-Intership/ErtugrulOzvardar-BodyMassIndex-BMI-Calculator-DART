@@ -1,6 +1,6 @@
 
 
-class bmiCalculator  {
+class BmiCalculator  {
 
   double height;
   double weight;

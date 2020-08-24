@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'bmiCalculator.dart';
+import 'bmiComparator.dart';
 
 class User {
   String name, surname;
@@ -60,14 +61,15 @@ class User {
 
 void main(){
   var newUser = createUser();
-  bmiCalculator calculator = new bmiCalculator();
+  BmiCalculator calculator = new BmiCalculator();
+  BmiComparator comparator = new BmiComparator();
   print("Type 'C' to Calculate your Body-mass-index: ");
   String userInput = stdin.readLineSync();
   if(userInput != "C"){
       throw{ArgumentError.value(userInput)};
   }else{
     var bmi = calculator.calculateBmi(newUser.height, newUser.weight);
-    print(bmi);
+    print(comparator.compare(bmi));
   }
 
 }
